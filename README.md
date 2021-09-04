@@ -12,4 +12,11 @@ conda env create --file conda.yaml
 ```
 mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artificats/model -p 1234
 ```
-3. Run the file make_predictions.sh
+3. Activate conda environment:
+```
+conda activate RandomForest
+```
+3. Run the file 
+```
+sh make_predictions.sh
+```
