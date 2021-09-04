@@ -9,6 +9,7 @@ Steps to start the prediction server:
 conda env create --file conda.yaml
 ```
 2. Run command:
-```mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artificats/model -p 1234
+```
+mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artificats/model -p 1234
 ```
 3. Run the file make_predictions.sh
