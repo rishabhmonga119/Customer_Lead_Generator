@@ -5,5 +5,10 @@ Prerequistes to start the MLFlow server:
 
 Steps to start the prediction server:
 1. Run command:
+```
+conda env create --file conda.yaml
+```
+2. Run command:
 ```mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artificats/model -p 1234
-2. Run the file make_predictions.sh
+```
+3. Run the file make_predictions.sh
