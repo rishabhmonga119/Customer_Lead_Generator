@@ -7,7 +7,8 @@ sys.path.insert(1, '/src')
 import utils
 
 def data_cleaning(input_data):
-    """ The data cleaning converts all the columns as type float. It drops rows with missing values or values not type convertable to 
+    """ 
+    The data cleaning converts all the columns as type float. It drops rows with missing values or values not type convertable to 
     float. It renames columns to easy to use column names.
 
     :param input_data: Input data
@@ -17,10 +18,11 @@ def data_cleaning(input_data):
     :rtype:df """
 
     ### ensuring all the training data is type float. Missing values/strings will be replaced with None and dropped from the dataframe 
-    #for i in range(len(input_data.columns)):
-    #    input_data.iloc[:,i] = input_data.iloc[:,i].apply(utils.type_conversion)
-    input_data.loc[input_data.q_OpeningHours=='ject', 'q_OpeningHours'] = None
-    #df1.q_OpeningHours = df1.q_OpeningHours.astype(float)
+    for i in range(len(input_data.columns)):
+        try:
+            input_data.iloc[:,i] = input_data.iloc[:,i].apply(utils.type_conversion)
+        except ValueError:
+            return None
     input_data.dropna(inplace=True)
     
     ### renaming columns for easy handling
