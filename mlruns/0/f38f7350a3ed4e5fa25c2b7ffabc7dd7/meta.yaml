@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/IRB/Documents/ZeissCodingChallenge/DataScienceCodingChallenge/DataScienceCodingChallenge/codetemplate/mlruns/0/f38f7350a3ed4e5fa25c2b7ffabc7dd7/artifacts
+end_time: 1630743422965
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: f38f7350a3ed4e5fa25c2b7ffabc7dd7
+run_uuid: f38f7350a3ed4e5fa25c2b7ffabc7dd7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1630743421983
+status: 3
+tags: []
+user_id: irb
