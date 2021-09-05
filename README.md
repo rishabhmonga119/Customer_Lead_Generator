@@ -20,7 +20,7 @@ mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artifacts/model
 
 5. For the batch scoring, add the true labels for the batch in batch_true_labels.txt as a list. 
 
-6. Run the shell script make_predictions.sh 
+6. Run the shell script make_predictions.sh to make predictions and evaluate model performance 
 ```
 sh make_predictions.sh
 ```
