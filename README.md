@@ -12,11 +12,11 @@ conda env create --file conda.yaml
 ```
 conda activate RandomForest
 ```
-3. Run command:
+3. Run command to start the prediction server:
 ```
 mlflow models serve -m mlruns/0/8ad24d33836340df9a724d04ef972154/artifacts/model -p 1234
 ```
-4. Add the batch data in the batch_data.csv file within the data folder. It should contain all the columns as in CustomerData_LeadGenerator.csv, except the target label b_gekauft_gesamt and the columns fakeID. If no data is given in batch_data.csv file, the last 10 rows of the test dataset is used as a batch to make predictions. 
+4. Add the batch data in the batch_data.csv file within the data folder. It should contain all the columns as in CustomerData_LeadGenerator.csv, except the target label b_gekauft_gesamt and the column fakeID. If no data is given in batch_data.csv file, the last 10 rows of the test dataset is used as a batch to make predictions. 
 
 5. For the batch scoring, add the true labels for the batch in batch_true_labels.txt as a list. 
 
