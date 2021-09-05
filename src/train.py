@@ -1,6 +1,5 @@
-"""**The Machine Learning Development**
-
-----
+"""
+**The Machine Learning Development**
 """
 import os
 from sklearn.model_selection import train_test_split
@@ -12,9 +11,11 @@ from sklearn.ensemble import RandomForestClassifier
 def main():
     """
     The ML training steps, including:
-        * x
-        * x
-        * x
+    1. Import preprocessed data
+    2. Split train and test sets
+    3. Train a RandomForest classifier
+    4. fit the model
+    5. Return model and test dataset
     """
     X,y = data_processing.main()
     train_X,test_X, train_y, test_y = train_test_split(X, y, test_size=0.15, random_state=42)

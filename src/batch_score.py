@@ -12,15 +12,13 @@ import os
 
 def main():
     ### check the file contents of the batch_values.txt, if its length is empty, it means no user input has been given.
-    ### in that case we use test dataset to create our batch dataset
+    ### in that case we use test dataset to score our model
     with open('data/batch_values.txt', 'r') as f:
         if len(f.readlines())==0:
             ### if batch_values.txt is empty, batch is created using test dataset
-            print("No batch data provided, using last 10 examples of test dataset to make a batch script")
             _,test_X,test_y = train.main()
             BATCH_SIZE = 10
             batch_test_y = test_y.iloc[-BATCH_SIZE:]
-            batch_prepare.prepare_batch(test_X, BATCH_SIZE, 'data/batch_values_test.txt')
         else:
             ### if new batch data is provided its corresponding true labels should be saved in batch_true_labels.txt file  
             with open('data/batch_true_labels.txt', 'r') as file:
@@ -39,6 +37,7 @@ def main():
             print("run make_predictions.sh script to get prediction values for the batch")
             return    
     
+    ### evaluate model performance
     acc_score, f1Score, tn, fp, fn, tp = evaluate.eval_metrics(batch_test_y, pred_y)
     print("Accuracy Score: ", acc_score)
     print("F1 Score: ", f1Score)

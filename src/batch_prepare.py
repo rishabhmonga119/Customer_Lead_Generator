@@ -1,4 +1,7 @@
 import pandas as pd
+import sys
+sys.path.insert(1, '/src')
+import train
 
 def prepare_batch(data,BATCH_SIZE, filename):
     """
@@ -34,7 +37,11 @@ def main():
         BATCH_SIZE = len(batch_data)
         prepare_batch(batch_data, BATCH_SIZE, 'data/batch_values.txt')
     except:
-        return
+        ### if batch_data.csv is empty, batch is created using the last 10 rows of test dataset
+        print("No batch data provided, using last 10 examples of test dataset to make a batch script")
+        _,test_X,test_y = train.main()
+        BATCH_SIZE = 10
+        prepare_batch(test_X, BATCH_SIZE, 'data/batch_values_test.txt')
 
 
 if __name__ == "__main__":

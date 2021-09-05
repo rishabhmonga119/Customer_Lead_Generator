@@ -5,7 +5,6 @@ sys.path.insert(1, 'src')
 print(sys.path)
 import data_processing
 
-
 class TestData(unittest.TestCase):
     
     def test_cleaned_data(self):
@@ -17,6 +16,14 @@ class TestData(unittest.TestCase):
         df = pd.DataFrame({'col1': [1, 2, '3', 4], 'col2': ["", '4', 5, '6.0'], 'col3': [1, '3', 5, 'err']})
         df_cleaned = data_processing.data_cleaning(df)
         self.assertEqual(len(df_cleaned),2)
+
+    def test_batch_data(self):
+        """
+        This test is used to ensure that the batch data consists of the same total columns as in the trained model  
+        """
+        df = pd.read_csv("data/batch_data.csv")
+        len_cols = len(df.columns)
+        self.assertEqual(len_cols,24)
 
 if __name__ == '__main__':
     unittest.main()
